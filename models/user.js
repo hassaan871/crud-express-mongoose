@@ -15,8 +15,8 @@ const userSchema = new mongoose.Schema({
     },
     jobTitle: {
         type: String
-    },
-})
+    }
+},{timestamps: true})
 
 const User = mongoose.model('users', userSchema)
 
