@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(logReqRes("log.txt"))
 
 //Routes
-app.use('/api/users', )
+app.use('/api/users',userRouter )
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
