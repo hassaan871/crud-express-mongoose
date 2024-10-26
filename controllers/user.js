@@ -2,14 +2,14 @@ const User = require('../models/user')
 
 const handleGetAllUsers = async (req, res) => {
     const allUsers = await User.find({})
-    if(!allUsers){return req.status(404).res.json({status: "No User in DataBase"})}
+    if(!allUsers){return res.status(404).res.json({status: "No User in DataBase"})}
     return res.json(allUsers)
 }
 
 const handleGetUserById = async (req, res) => {
     const id = req.params.id
     const user = await User.findById(id)
-    if(!user){return req.status(404).json({eroor: 'User Not Found'})}
+    if(!user){return res.status(404).json({eroor: 'User Not Found'})}
     return res.json(user)
 }
 
@@ -21,6 +21,10 @@ const handleUpdateUserById = async (req, res) => {
 
 const handleDeleteUserById = async (req, res) => {
     const id = req.params.id
+    const user = await User.findById(id)
+    if(!user){
+        return res.status(404).json({status: "No user found for deletion"})
+    }
     await User.findByIdAndDelete(id)
     return res.json({status: "Deleted Success"})
 }
