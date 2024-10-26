@@ -1,1 +1,9 @@
 1729949832025 : ::1 & GET : /api/users
+1729949997708 : ::1 & GET : /api/users
+1729950019954 : ::1 & GET : /api/users/123
+1729950197910 : ::1 & POST : /api/users/
+1729950260077 : ::1 & POST : /api/users/
+1729951220030 : ::1 & GET : /api/users/
+1729951231812 : ::1 & POST : /api/users/
+1729951239714 : ::1 & GET : /api/users/
+1729951336807 : ::1 & GET : /api/users/671cf5ff287a4389ed227dab
