@@ -2,7 +2,7 @@ const User = require('../models/user')
 
 const handleGetAllUsers = async (req, res) => {
     const allUsers = await User.find({})
-    if(!allUsers){return res.json({status: "No User in DataBase"})}
+    if(!allUsers){return req.status(404).res.json({status: "No User in DataBase"})}
     return res.json(allUsers)
 }
 
