@@ -8,7 +8,7 @@ const handleGetAllUsers = async (req, res) => {
 
 const handleGetUserById = async (req, res) => {
     const id = req.params.id
-    const user = await User.findOne(id)
+    const user = await User.findById(id)
     if(!user){return req.status(404).json({eroor: 'User Not Found'})}
     return res.json(user)
 }
